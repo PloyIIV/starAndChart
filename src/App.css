@@ -4,6 +4,19 @@
   padding: 2rem;
   text-align: center;
 }
+.elo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 100px;
+  box-shadow: 0 10px 15px -3px rgba(255, 114, 180, 0.1), 0 4px 6px -4px rgba(255, 154, 192, 0.1);
+}
+
+.elo-content {
+  width: 50%;
+}
 
 .chart-container {
   display: flex;

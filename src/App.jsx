@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import 'chart.js/auto'
+import "chart.js/auto";
 import { Bar, Pie } from "react-chartjs-2";
 
 const jsonData = [
@@ -135,6 +135,15 @@ function App() {
 
   return (
     <>
+      <div className="elo-container">
+        <h1>ELO Rating คืออะไร?</h1>
+        <p className="elo-content">
+          เป็นการจัดอันดับของผู้เล่น ซึ่งหากผู้เล่นที่มีค่า ELO สูง
+          เล่นแพ้ผู้เล่นที่มีค่า ELO ต่ำ ผู้เล่น ELO สูงจะคะแนนลดลงมาก
+          ซึ่งเหมือนกันกับผู้เล่นที่มี ELO ต่ำ แต่หากชนะผู้เล่น ELO
+          สูงก็จะได้คะแนนเพิ่มขึ้นเยอะ ซึ่งในเกมส่วนใหญ่จะใช้การจัดอันดับ ELO โดยส่วนมาก
+        </p>
+      </div>
       <div>
         <p>Number of Star:</p>
         <input
@@ -234,47 +243,59 @@ function App() {
       <hr />
       <div className="chart-container">
         <div className="chart-div">
-          <Bar data={{
-            labels: jsonData.map((data) => data.City),
-            datasets: [
-              {
-                label: "Range by Country",
-                data: jsonData.map((data) => data.Population),
-                backgroundColor: [
-                  `rgba(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},0.7)`,
-                  `rgba(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},0.7)`,
-                  `rgba(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},0.7)`, 
-                ],
-                borderColor: [
-                  'rgb(50,50,50)'
-                ],
-                borderRadius: 10,
-                borderWidth: 3
-              },
-            ]
-          }} />
+          <Bar
+            data={{
+              labels: jsonData.map((data) => data.City),
+              datasets: [
+                {
+                  label: "Range by Country",
+                  data: jsonData.map((data) => data.Population),
+                  backgroundColor: [
+                    `rgba(${Math.floor(Math.random() * 256)},${Math.floor(
+                      Math.random() * 256
+                    )},${Math.floor(Math.random() * 256)},0.7)`,
+                    `rgba(${Math.floor(Math.random() * 256)},${Math.floor(
+                      Math.random() * 256
+                    )},${Math.floor(Math.random() * 256)},0.7)`,
+                    `rgba(${Math.floor(Math.random() * 256)},${Math.floor(
+                      Math.random() * 256
+                    )},${Math.floor(Math.random() * 256)},0.7)`,
+                  ],
+                  borderColor: ["rgb(50,50,50)"],
+                  borderRadius: 10,
+                  borderWidth: 3,
+                },
+              ],
+            }}
+          />
         </div>
         <hr />
         <div className="chart-div">
-          <Pie data={{
-            labels: jsonData.map((data) => data.City),
-            datasets: [
-              {
-                label: "Range by Country",
-                data: jsonData.map((data) => data.Population),
-                backgroundColor: [
-                  `rgba(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},0.7)`,
-                  `rgba(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},0.7)`,
-                  `rgba(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},0.7)`, 
-                ],
-                borderColor: [
-                  'rgb(50,50,50)'
-                ],
-                borderRadius: 10,
-                borderWidth: 3,
-              },
-            ]
-          }} />
+          <Pie
+            data={{
+              labels: jsonData.map((data) => data.City),
+              datasets: [
+                {
+                  label: "Range by Country",
+                  data: jsonData.map((data) => data.Population),
+                  backgroundColor: [
+                    `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+                      Math.random() * 255
+                    )},${Math.floor(Math.random() * 255)},0.7)`,
+                    `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+                      Math.random() * 255
+                    )},${Math.floor(Math.random() * 255)},0.7)`,
+                    `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+                      Math.random() * 255
+                    )},${Math.floor(Math.random() * 255)},0.7)`,
+                  ],
+                  borderColor: ["rgb(50,50,50)"],
+                  borderRadius: 10,
+                  borderWidth: 3,
+                },
+              ],
+            }}
+          />
         </div>
       </div>
     </>
